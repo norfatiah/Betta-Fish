@@ -6,6 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:toast/toast.dart';
 import 'package:http/http.dart' as http;
 import 'mainscreen.dart';
+import 'user.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -152,15 +153,22 @@ class _LoginScreenState extends State<LoginScreen> {
       "password": _password,
     }).then((res) {
       print(res.body);
-      if (res.body == "success") {
+      List userdata = res.body.split(",");
+      if (userdata[0] == "success") {
         Toast.show(
           "Login Succes",
           context,
           duration: Toast.LENGTH_LONG,
           gravity: Toast.TOP,
         );
+         User user = new User(
+            email: _email,
+            name: userdata[1],
+            password: _password,
+            phone: userdata[2],
+            datereg: userdata[3]);
         Navigator.push(context,
-            MaterialPageRoute(builder: (BuildContext context) => MainScreen()));
+            MaterialPageRoute(builder: (BuildContext context) => MainScreen(user: user)));
       } else {
         Toast.show(
           "Login failed",
