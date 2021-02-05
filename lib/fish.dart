@@ -6,8 +6,7 @@ class Fish {
         fishprice,
         fishqty,
         fishimage,
-        rating,
-        description;
+        rating;
   Fish(
       { 
         this.fishid,
@@ -15,6 +14,5 @@ class Fish {
         this.fishprice,
         this.fishqty,
         this.fishimage,
-        this.rating,
-        this.description});
+        this.rating});
 }

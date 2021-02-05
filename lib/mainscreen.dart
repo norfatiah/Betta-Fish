@@ -203,7 +203,6 @@ class _MainScreenState extends State<MainScreen> {
       fishqty: fishlist[index]['fishqrt'],
       fishimage: fishlist[index]['fishimage'],
       rating: fishlist[index]['rating'],
-      description: fishlist[index]['description'],
     );
 
     Navigator.push(

@@ -144,7 +144,6 @@ class DetailScreen extends StatefulWidget {
         fishqty: fishlist[index]['fishqrt'],
         fishimage: fishlist[index]['fishimage'],
         rating: fishlist[index]['rating'],
-        description: fishlist[index]['description'],
         );
 
   }

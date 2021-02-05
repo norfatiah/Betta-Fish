@@ -288,7 +288,6 @@ class _FishCartScreenState extends State<FishCartScreen> {
         fishqty: fishlist[index]['fishqrt'],
         fishimage: fishlist[index]['fishimage'],
         rating: fishlist[index]['rating'],
-        description: fishlist[index]['description'],
         );
 
     await Navigator.push(
@@ -385,7 +384,7 @@ class _FishCartScreenState extends State<FishCartScreen> {
   }
 
   void _deleteCart(int index) {
-    http.post("https://slumberjer.com/foodninjav2/php/delete_cart.php", body: {
+    http.post("http://seriouslaa.com/bettafish/php/delete_cart.php", body: {
       "email": widget.user.email,
       "fishid": fishlist[index]['fishid'],
     }).then((res) {
